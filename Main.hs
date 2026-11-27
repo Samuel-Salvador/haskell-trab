@@ -4,9 +4,7 @@ import System.IO (BufferMode (NoBuffering), hSetBuffering, stdout)
 import Text.Printf (printf)
 import Text.Read (readMaybe)
 
--- ============================================================================
 -- 1. MODELAGEM DE DADOS (Tipos proprios e simples)
--- ============================================================================
 
 data Categoria = Livro | Alimento | Eletronico
   deriving (Show, Eq)
@@ -15,9 +13,7 @@ data Categoria = Livro | Alimento | Eletronico
 data Item = Item String Categoria Double Int
   deriving (Show)
 
--- ============================================================================
 -- 2. FUNCOES PURAS (Regras de negocio sem efeito colateral)
--- ============================================================================
 
 subtotalItem :: Item -> Double
 subtotalItem (Item _ _ preco qtd) = preco * fromIntegral qtd
